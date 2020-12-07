@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render , redirect
 
 from myapp.models import *
 
@@ -22,3 +22,5 @@ def show_home_page(request):
     data = {'images': images, 'category': cats}
 
     return  render(request, 'home.html', data)
+def home(request):
+    return redirect('/home')
